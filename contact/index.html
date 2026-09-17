@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ menu: false, theme: localStorage.theme || 'system' }" x-init="$watch('theme', value => { localStorage.theme = value; document.documentElement.classList.toggle('dark', value === 'dark' || (value === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) })" :class="{ 'dark': theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) }">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontak | Brillian Ghulam</title>
+    <meta name="description" content="Portfolio Brillian Ghulam, System Analyst dan ERP Implementor.">
+    <link rel="canonical" href="https://brillianghulam20.github.io/contact">
+    <meta property="og:type" content="website"><meta property="og:title" content="Kontak | Brillian Ghulam"><meta property="og:description" content="Saya menganalisis proses bisnis, merancang sistem, dan mengubah kebutuhan menjadi solusi yang dapat digunakan."><meta property="og:url" content="https://brillianghulam20.github.io/contact">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>document.documentElement.classList.toggle('dark',localStorage.theme==='dark'||((!localStorage.theme||localStorage.theme==='system')&&matchMedia('(prefers-color-scheme:dark)').matches))</script>
+</head>
+<body>
+<a href="#content" class="fixed left-4 top-4 z-[100] -translate-y-24 bg-cyan px-4 py-2 font-bold text-ink focus:translate-y-0">Lewati ke konten</a>
+<header class="no-print sticky top-0 z-50 border-b border-slate-300/70 bg-paper/90 backdrop-blur dark:border-slate-800 dark:bg-ink/90">
+    <div class="shell flex h-18 items-center justify-between">
+        <a href="https://brillianghulam20.github.io" class="flex items-center gap-3 font-bold tracking-tight"><span class="grid size-9 place-items-center bg-ink font-mono text-xs text-cyan dark:bg-cyan dark:text-ink">BG</span><span class="hidden sm:block">Brillian Ghulam</span></a>
+        <nav class="hidden items-center gap-7 text-sm font-semibold lg:flex" aria-label="Navigasi utama">
+            <a href="https://brillianghulam20.github.io/about" class="transition hover:text-cyan ">Tentang</a><a href="https://brillianghulam20.github.io/experience" class="transition hover:text-cyan ">Pengalaman</a><a href="https://brillianghulam20.github.io/skills" class="transition hover:text-cyan ">Keahlian</a><a href="https://brillianghulam20.github.io/projects" class="transition hover:text-cyan ">Project</a><a href="https://brillianghulam20.github.io/resume" class="transition hover:text-cyan ">Resume</a><a href="https://brillianghulam20.github.io/contact" class="transition hover:text-cyan text-cyan">Kontak</a>        </nav>
+        <div class="flex items-center gap-2">
+            <select x-model="theme" aria-label="Tema" class="border border-slate-300 bg-transparent px-2 py-2 text-xs dark:border-slate-700"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+            <button @click="menu = !menu" class="grid size-10 place-items-center border border-slate-300 lg:hidden dark:border-slate-700" :aria-expanded="menu"><span class="sr-only">Buka menu</span><span class="font-mono">MENU</span></button>
+        </div>
+    </div>
+    <nav x-cloak x-show="menu" @click.outside="menu=false" class="shell grid gap-1 border-t border-slate-300 py-4 lg:hidden dark:border-slate-800">
+        <a @click="menu=false" href="https://brillianghulam20.github.io" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Home</a><a @click="menu=false" href="https://brillianghulam20.github.io/about" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Tentang</a><a @click="menu=false" href="https://brillianghulam20.github.io/experience" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Pengalaman</a><a @click="menu=false" href="https://brillianghulam20.github.io/skills" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Keahlian</a><a @click="menu=false" href="https://brillianghulam20.github.io/projects" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Project</a><a @click="menu=false" href="https://brillianghulam20.github.io/resume" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Resume</a><a @click="menu=false" href="https://brillianghulam20.github.io/contact" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Kontak</a>    </nav>
+</header>
+<main id="content"><section class="section shell"><p class="kicker">Contact / Start a Conversation</p><h1 class="display">Mari bicara tentang proses, sistem, atau peluang berikutnya.</h1><p class="lede mt-8">Cara tercepat menghubungi saya adalah melalui email atau LinkedIn. Untuk percakapan langsung, gunakan WhatsApp.</p><div class="mt-16 grid gap-4 md:grid-cols-3"><a class="panel p-7 transition hover:-translate-y-1 hover:border-cyan" href="mailto:brillianghulam@gmail.com"><span class="font-mono text-xs text-slate-500">EMAIL</span><p class="mt-8 break-all font-bold">brillianghulam@gmail.com</p></a><a class="panel p-7 transition hover:-translate-y-1 hover:border-cyan" href="https://linkedin.com/in/brillian-ghulam/" target="_blank" rel="noopener"><span class="font-mono text-xs text-slate-500">LINKEDIN</span><p class="mt-8 font-bold">Terhubung secara profesional ↗</p></a><a class="panel p-7 transition hover:-translate-y-1 hover:border-cyan" href="https://wa.me/6281717539575" target="_blank" rel="noopener"><span class="font-mono text-xs text-slate-500">WHATSAPP</span><p class="mt-8 font-bold">Mulai percakapan ↗</p></a></div></section>
+</main>
+<footer class="no-print border-t border-slate-300 py-10 dark:border-slate-800"><div class="shell flex flex-col justify-between gap-5 sm:flex-row"><div><p class="font-bold">Brillian Ghulam Ash Shidiq</p><p class="mt-1 text-sm text-slate-500">System Analyst · ERP Implementor · Developer</p></div><p class="font-mono text-xs text-slate-500">© 2026 · BUILT TO EXPLAIN THE WORK</p></div></footer>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ menu: false, theme: localStorage.theme || 'system' }" x-init="$watch('theme', value => { localStorage.theme = value; document.documentElement.classList.toggle('dark', value === 'dark' || (value === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)) })" :class="{ 'dark': theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) }">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project | Brillian Ghulam</title>
+    <meta name="description" content="Portfolio Brillian Ghulam, System Analyst dan ERP Implementor.">
+    <link rel="canonical" href="https://brillianghulam20.github.io/projects">
+    <meta property="og:type" content="website"><meta property="og:title" content="Project | Brillian Ghulam"><meta property="og:description" content="Saya menganalisis proses bisnis, merancang sistem, dan mengubah kebutuhan menjadi solusi yang dapat digunakan."><meta property="og:url" content="https://brillianghulam20.github.io/projects">
+    <meta name="twitter:card" content="summary_large_image">
+    <script>document.documentElement.classList.toggle('dark',localStorage.theme==='dark'||((!localStorage.theme||localStorage.theme==='system')&&matchMedia('(prefers-color-scheme:dark)').matches))</script>
+</head>
+<body>
+<a href="#content" class="fixed left-4 top-4 z-[100] -translate-y-24 bg-cyan px-4 py-2 font-bold text-ink focus:translate-y-0">Lewati ke konten</a>
+<header class="no-print sticky top-0 z-50 border-b border-slate-300/70 bg-paper/90 backdrop-blur dark:border-slate-800 dark:bg-ink/90">
+    <div class="shell flex h-18 items-center justify-between">
+        <a href="https://brillianghulam20.github.io" class="flex items-center gap-3 font-bold tracking-tight"><span class="grid size-9 place-items-center bg-ink font-mono text-xs text-cyan dark:bg-cyan dark:text-ink">BG</span><span class="hidden sm:block">Brillian Ghulam</span></a>
+        <nav class="hidden items-center gap-7 text-sm font-semibold lg:flex" aria-label="Navigasi utama">
+            <a href="https://brillianghulam20.github.io/about" class="transition hover:text-cyan ">Tentang</a><a href="https://brillianghulam20.github.io/experience" class="transition hover:text-cyan ">Pengalaman</a><a href="https://brillianghulam20.github.io/skills" class="transition hover:text-cyan ">Keahlian</a><a href="https://brillianghulam20.github.io/projects" class="transition hover:text-cyan text-cyan">Project</a><a href="https://brillianghulam20.github.io/resume" class="transition hover:text-cyan ">Resume</a><a href="https://brillianghulam20.github.io/contact" class="transition hover:text-cyan ">Kontak</a>        </nav>
+        <div class="flex items-center gap-2">
+            <select x-model="theme" aria-label="Tema" class="border border-slate-300 bg-transparent px-2 py-2 text-xs dark:border-slate-700"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+            <button @click="menu = !menu" class="grid size-10 place-items-center border border-slate-300 lg:hidden dark:border-slate-700" :aria-expanded="menu"><span class="sr-only">Buka menu</span><span class="font-mono">MENU</span></button>
+        </div>
+    </div>
+    <nav x-cloak x-show="menu" @click.outside="menu=false" class="shell grid gap-1 border-t border-slate-300 py-4 lg:hidden dark:border-slate-800">
+        <a @click="menu=false" href="https://brillianghulam20.github.io" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Home</a><a @click="menu=false" href="https://brillianghulam20.github.io/about" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Tentang</a><a @click="menu=false" href="https://brillianghulam20.github.io/experience" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Pengalaman</a><a @click="menu=false" href="https://brillianghulam20.github.io/skills" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Keahlian</a><a @click="menu=false" href="https://brillianghulam20.github.io/projects" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Project</a><a @click="menu=false" href="https://brillianghulam20.github.io/resume" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Resume</a><a @click="menu=false" href="https://brillianghulam20.github.io/contact" class="px-3 py-3 font-semibold hover:bg-cyan hover:text-ink">Kontak</a>    </nav>
+</header>
+<main id="content"><section class="section shell" x-data="{ filter: 'all' }"><p class="kicker">Projects / Case Studies</p><h1 class="display">Masalah, analisis, rancangan, dan hasil.</h1><p class="lede mt-8">Setiap project disusun untuk menjelaskan konteks bisnis dan proses berpikir, bukan sekadar daftar teknologi.</p><div class="mt-10 flex flex-wrap gap-2"><button @click="filter='all'" :class="filter==='all' ? 'bg-cyan text-ink border-cyan' : ''" class="border border-slate-300 px-4 py-2 text-xs font-bold dark:border-slate-700">SEMUA</button><button @click="filter='automation'" :class="filter==='automation' ? 'bg-cyan text-ink border-cyan' : ''" class="border border-slate-300 px-4 py-2 text-xs font-bold dark:border-slate-700">AUTOMATION</button><button @click="filter='data-analysis'" :class="filter==='data-analysis' ? 'bg-cyan text-ink border-cyan' : ''" class="border border-slate-300 px-4 py-2 text-xs font-bold dark:border-slate-700">DATA ANALYSIS</button><button @click="filter='enterprise-application'" :class="filter==='enterprise-application' ? 'bg-cyan text-ink border-cyan' : ''" class="border border-slate-300 px-4 py-2 text-xs font-bold dark:border-slate-700">ENTERPRISE APPLICATION</button></div><div class="mt-12 grid gap-5 lg:grid-cols-2"><div x-show="filter==='all'||filter==='automation'"><article class="group panel relative overflow-hidden p-6 sm:p-8">
+    <div class="mb-12 flex items-start justify-between"><span class="font-mono text-xs text-slate-500">01 / AUTOMATION</span><span class="size-2 bg-cyan"></span></div>
+    <p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-slate-500">Automation / Personal Finance</p>
+    <h3 class="text-2xl font-bold tracking-tight sm:text-3xl"><a class="after:absolute after:inset-0" href="https://brillianghulam20.github.io/projects/whatsapp-finance-bot">WhatsApp Finance Bot</a></h3>
+    <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">Asisten pencatatan finansial berbasis perintah percakapan dengan integrasi spreadsheet.</p>
+    <div class="mt-8 flex flex-wrap gap-2"><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">Google Apps Script</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">Google Sheets</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">WhatsApp Bot</span></div>
+    <div class="mt-8 font-mono text-xs font-medium text-slate-500 transition group-hover:text-cyan">BACA CASE STUDY →</div>
+</article>
+</div><div x-show="filter==='all'||filter==='data-analysis'"><article class="group panel relative overflow-hidden p-6 sm:p-8">
+    <div class="mb-12 flex items-start justify-between"><span class="font-mono text-xs text-slate-500">02 / DATA ANALYSIS</span><span class="size-2 bg-cyan"></span></div>
+    <p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-slate-500">Data Automation / Reconciliation</p>
+    <h3 class="text-2xl font-bold tracking-tight sm:text-3xl"><a class="after:absolute after:inset-0" href="https://brillianghulam20.github.io/projects/automatic-data-comparison">Automatic Data Comparison</a></h3>
+    <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">Alat rekonsiliasi yang menemukan match, mismatch, dan record yang hilang di dua sumber data.</p>
+    <div class="mt-8 flex flex-wrap gap-2"><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">Python</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">SQL</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">DBF</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">Data Analysis</span></div>
+    <div class="mt-8 font-mono text-xs font-medium text-slate-500 transition group-hover:text-cyan">BACA CASE STUDY →</div>
+</article>
+</div><div x-show="filter==='all'||filter==='enterprise-application'"><article class="group panel relative overflow-hidden p-6 sm:p-8">
+    <div class="mb-12 flex items-start justify-between"><span class="font-mono text-xs text-slate-500">03 / ENTERPRISE APPLICATION</span><span class="size-2 bg-cyan"></span></div>
+    <p class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-slate-500">Enterprise Application / System Analysis</p>
+    <h3 class="text-2xl font-bold tracking-tight sm:text-3xl"><a class="after:absolute after:inset-0" href="https://brillianghulam20.github.io/projects/document-tracking-system">Document Tracking System</a></h3>
+    <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">Sistem pelacakan dokumen dengan QR code, flexible routing, current custodian, dan audit trail.</p>
+    <div class="mt-8 flex flex-wrap gap-2"><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">Laravel</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">PHP</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">PostgreSQL</span><span class="border border-slate-300 px-2.5 py-1 font-mono text-[10px] uppercase dark:border-slate-700">JavaScript</span></div>
+    <div class="mt-8 font-mono text-xs font-medium text-slate-500 transition group-hover:text-cyan">BACA CASE STUDY →</div>
+</article>
+</div></div></section>
+</main>
+<footer class="no-print border-t border-slate-300 py-10 dark:border-slate-800"><div class="shell flex flex-col justify-between gap-5 sm:flex-row"><div><p class="font-bold">Brillian Ghulam Ash Shidiq</p><p class="mt-1 text-sm text-slate-500">System Analyst · ERP Implementor · Developer</p></div><p class="font-mono text-xs text-slate-500">© 2026 · BUILT TO EXPLAIN THE WORK</p></div></footer>
+</body></html>
